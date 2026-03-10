@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static '/assets/css/main.css' %}" rel="stylesheet">
+</head>
+</style>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="Logo">
+                    <h1>Smart TO-DO</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="{% url 'dashboard' %}" class="reg">Dashboard</a></li>
+                    <li><a href="{% url 'add_task' %}" class="reg">Add Task</a></li>
+                    <li><a href="{% url 'index' %}" class="reg">LogOut</a></li>
+                </ul>
+                <button class="toggle" type="button">Menu</button>
+            </nav>
+        </div>
+    </header>
+    <div class="add">
+    <form action="{% url 'add_task' %}" method="POST">
+        {% csrf_token %}
+            <input type="text" name="title" placeholder="Title"/> <br>
+            <textarea name="description" placeholder="description" cols="50", rows="5"></textarea> <br>
+            <input type="date" name="due_date" placeholder="due_date"/>
+            <button type="submit">Save Task</button>
+    </form>
+    </div>
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
+
+</html>

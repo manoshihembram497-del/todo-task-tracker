@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="Logo">
+                    <h1>Smart TO-DO</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="{% url 'dashboard' %}" >Dashboard</a></li>
+                    <li><a href="{% url 'add_task' %}" >Add Task</a></li>
+                    <li><a href="{% url 'index' %}" >LogOut</a></li>
+                </ul>
+                <button class="toggle" type="button">Menu</button>
+            </nav>
+        </div>
+    </header>
+    <section class="dashboard">
+        <div class="container">
+            <div class="dashboard-item">
+                <h2>Welcome to Smart TO-DO App, {{user.username}}</h2>
+                <h4>Dashboard</h4>
+                <div class="task">
+                    <a href="{% url 'add_task' %}">Add Task</a>
+                </div>
+                <h2>Your Tasks</h2>
+                <form action="" method="GET">
+                    <input type="text" name="search" placeholder="Search tasks..">
+                    <button type="submit">Search</button>
+                </form>
+                <div class="task-board">
+                    {% for task in tasks %}
+                    <div class="task-card {% if task.due_date <= today %} overdue {% endif %}">
+                        <div class="task-info">
+                            <p><span>Title:</span> {{task.title}}</p>
+                            <p><span>Description:</span> {{task.description}}</p>
+                            <p><span>Due Date:</span> {{task.due_date}}</p>
+                                <div class="update">
+                                    <a href="{% url 'edit_task' task.id %}">Edit</a>
+                                    <a href="{% url 'delete_task' task.id %}">Delete</a>
+                                    <a href="{% url 'completed_task' task.id %}"></a>
+                                    <input type="checkbox" {% if task.is_completed %} checked {% endif %} />
+                                </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
+
+</html>

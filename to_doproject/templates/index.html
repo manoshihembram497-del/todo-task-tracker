@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static '/assets/css/main.css' %}" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="Logo">
+            <h1>Smart TO-DO</h1>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="home-pg">
+    <h2>Welcome to Smart TO-DO App</h2>
+    <div class="acc">
+        <p>To Start</p>
+        <a href="{% url 'register' %}">Register Now</a>
+    </div>
+    <div class="acc">
+        <p>Already Have an Account?</p>
+        <a href="{% url 'login' %}">LogIn</a>
+    </div>
+    <span>Track your daily tasks easily.</span>
+    </div>
+    </div>
+</body>
+</html>
