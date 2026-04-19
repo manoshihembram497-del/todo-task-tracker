@@ -10,24 +10,28 @@
 </head>
 
 <body>
-    <!-- <div class="login"> -->
-        <h1>LogIn Now</h1>
+        <div class="login">
+        <h1>Login Now</h1>
         {% for message in messages%}
-        <h3>{{message}}</h3>
+        <h3>{{message}}</h3> 
         {% endfor %}
+        </div>
         <div class="register">
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
+                <div class="int">
                 <p>Username:</p>
                 <input type="text" name="username" />
                 <p>Password:</p>
                 <input type="password" name="password" /> <br>
+                </div>
+                <div class="sub">
                 <input type="submit" />
+                </div>
             </form>
             <p>Already have an account?</p>
             <a href="{% url 'register' %}">Register Here</a>
-        </div>   
-    <!-- </div> -->
+        </div>
 </body>
 
 </html>

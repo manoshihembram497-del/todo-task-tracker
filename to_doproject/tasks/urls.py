@@ -10,7 +10,6 @@ urlpatterns = [
     path('edit_task/<int:id>/', views.edit_task, name = 'edit_task'),
     path('delete_task/<int:id>/', views.delete_task, name = 'delete_task'),
     path('completed_task/<int:id>/', views.completed_task, name = 'completed_task'),
-    path('api/tasks/', views.task_api, name = 'task_api')
 ]
 
 # from datetime import datetime

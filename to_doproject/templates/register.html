@@ -9,6 +9,7 @@
     <link href="{% static '/assets/css/main.css' %}" rel="stylesheet">
 </head>
 <body>
+    <div class="login">
     <h1>Register Here</h1>
     {% for message in messages%}
     <h3>{{message}}</h3>
@@ -16,6 +17,7 @@
     <div class="register">
     <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
+        <div class="int">
         <p>Username:</p>
         <input type="text" name="username" />
         <p>Email:</p>
@@ -24,8 +26,12 @@
         <input type="password" name="password" />
         <p>Confirm Password:</p>
         <input type="password" name="password2" /> <br>
+        </div>
+        <div class="sub">
         <input type="submit" />
+        </div>
     </form>
+    </div>
     </div>
 </body>
 

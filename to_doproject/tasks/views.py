@@ -1,11 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
-from .models import Task
-from datetime import date
-from .serializers import TaskSerializer
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
+from taskapi.models import Task
 
 # Create your views here.
 
@@ -98,10 +94,3 @@ def completed_task(request, id):
     task.is_completed = not task.is_completed
     task.save()
     return redirect('dashboard')
-
-@api_view(['GET'])
-def task_api(request):
-    tasks = Task.objects.all()
-    serializer =  TaskSerializer(tasks, many=True)
-
-    return Response(serializer.data)
