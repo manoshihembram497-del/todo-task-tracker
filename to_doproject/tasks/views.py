@@ -43,7 +43,7 @@ def login(request):
             auth.login(request, User)
             return redirect('dashboard')
         else:
-            messages.info(request, "Credentials Invalid!")
+            messages.info(request, "Invalid! Credentials")
             return redirect('login')
     return render(request, 'login.html')
 

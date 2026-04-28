@@ -7,15 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="{% static '/assets/css/main.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 </head>
 <body>
     <div class="login">
     <h1>Register Here</h1>
     {% for message in messages%}
-    <h3>{{message}}</h3>
+    <h3 style="color: #ff0000;">{{message}}</h3>
     {% endfor %}
     <div class="register">
-    <form action="{% url 'register' %}" method="POST">
+    <form action="{% url 'register' %}" method="POST" style="background-color: #a2a4a5;">
         {% csrf_token %}
         <div class="int">
         <p>Username:</p>
@@ -33,6 +34,8 @@
     </form>
     </div>
     </div>
+    <script src="{%static '/assets/js/main.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

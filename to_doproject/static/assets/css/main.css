@@ -121,7 +121,7 @@ nav {
 
 .dashboard {
     width: 100%;
-    margin-top: 7rem;
+    margin-top: 2rem;
 }
 
 .dashboard-item h4 {
@@ -143,28 +143,28 @@ nav {
 .task {
     width: fit-content;
     padding: 0.5rem 1rem;
-    background-color: #920d40;
+    background-color: #a2a4a5;
     border-radius: 10px;
 }
 
 .task a {
-    color: #fff;
+    color: #000000;
 }
 
-.task-board {
+/* .card{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
-.task-card {
+.card_body {
     border: 1px solid #d7d2d2;
     padding: 1rem;
     border-radius: 15px;
     background-color: pink;
     height: 200px;
     box-shadow: 5px 0 10px 0 #721c3e8e;
-}
+} */
 
 .task-card p {
     overflow: hidden;
@@ -256,7 +256,7 @@ nav {
 .acc a{
     width: fit-content;
     padding: 0.5rem 1rem;
-    background-color: #920d40;
+    /* background-color: #a2a4a5; */
     border-radius: 10px;
 }
 .acc a{
