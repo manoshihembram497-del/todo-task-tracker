@@ -51,7 +51,7 @@
                     <a href="{% url 'add_task' %}" style="color: #000;">Add Task</a>
                 </div>
                 <h2>Your Tasks</h2>
-                <div class="card" style="width: 18rem;">
+                <!-- <div class="card" style="width: 18rem;">
                 {% for task in tasks %}
                     <div class="card-body">
                         <h5 class="card-title">Title: {{task.title}}</h5>
@@ -61,6 +61,24 @@
                         <a href="{% url 'delete_task' task.id %}" class="card-link">Delete Task</a>
                     </div>
                 {% endfor %}
+                </div> -->
+                <div class="container">
+                    <div class="row row-cols-4 d-flex flex-column flex-md-row">
+                        {% for task in tasks %}
+                        <div class="col ">
+                            <div class="card mb-2" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Title: {{task.title}}</h5>
+                                    <p class="card-text">Description: {{task.description}}</p>
+                                    <p class="card-text">Due Date: {{task.due_date}}</p>
+                                    <a href="{% url 'edit_task' task.id %}" class="card-link">Edit Task</a>
+                                    <a href="{% url 'delete_task' task.id %}" class="card-link">Delete Task</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
