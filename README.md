@@ -11,4 +11,5 @@ A Django web application that allows users to manage daily tasks.
 Python,
 Django,
 HTML,
-CSS
+CSS,
+Bootstrap
